@@ -1,0 +1,8 @@
+node_modules/
+dist/
+webApp/app/mall/js/
+webApp/app/mall/css/
+webApp/app/clxg/js/
+webApp/app/clxg/css/
+webApp/app/*/*.rar
+webApp/app/*/*.zip

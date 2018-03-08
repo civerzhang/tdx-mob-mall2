@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登录</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #app {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-image: linear-gradient(0deg, #4D91FF 0%, #2E6BB1 100%);
+    }
+    .title {
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .btn {
+      margin-top: 15px;
+      height: 36px;
+      width: 120px;
+      border: 1px solid #FFFFFF;
+      border-radius: 6px;
+      line-height: 36px;
+      text-align: center;
+      font-size: 16px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <p class="title">安心理财，就在川财~登录后查看您的理财资产</p>
+  <div class="btn" onclick="loginClick()">登录</div>
+</div>
+</body>
+<script src="../../libs/jquery-1.11.2.min.js"></script>
+<script src="../../tlibs/ts_client.js"></script>
+<script src="../../tlibs/connect.js"></script>
+<script src="../../tlibs/msgbox.js"></script>
+<script>
+
+  function loginClick() {
+    __tdxLoginBox();
+  }
+
+  function onActivity() {
+
+    __webCallTql.send("tdxEnumTradeAcc", {}, function(res) {
+  
+      var isPtLogin = false;
+      var user;
+      if(typeof res == "string") {
+        res = JSON.parse(res);
+      }
+    
+      for(var i = 0; i < res.length; i++) {
+        
+        var zh = res[i];
+        if(typeof zh == "string") {
+          zh = JSON.parse(zh);
+        }
+    
+        // 第一个普通账户
+        if(zh.HostType == 0) {
+          isPtLogin = true;
+          user = zh;
+          break;
+        }
+      }
+
+      if(isPtLogin && window.history.length > 1) {
+        window.history.go(-1);
+      }
+    });
+  }
+
+  window["tdxActivity"] = onActivity;
+  window["tdxRefresh"] = onActivity;
+  window["Ret_Query"] = onActivity;
+
+</script>
+</html>

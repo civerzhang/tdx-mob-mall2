@@ -1,0 +1,26 @@
+[
+  {
+    "tplid": "mob-wd-tab",
+    "file": "mob-wd-tab.vue"
+  },
+  {
+    "tplid": "mob-wd-tab2",
+    "file": "mob-wd-tab2.vue"
+  },
+  {
+    "tplid": "mob-wd-bar",
+    "file": "mob-wd-bar.vue"
+  },
+  {
+    "tplid": "mob-wd-input",
+    "file": "mob-wd-input.vue"
+  },
+  {
+    "tplid": "mob-wd-list",
+    "file": "mob-wd-list.vue"
+  },
+  {
+    "tplid": "mob-wd-zz",
+    "file": "mob-wd-zz.vue"
+  }
+]

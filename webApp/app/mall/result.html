@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>委托结果提示</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <style>
+  
+    .app {
+      display: flex;
+      flex-direction: column;
+      margin: 40px 20px;
+      align-items: center;
+    }
+
+    #rtImage {
+      width: 100px;
+      height: 100px;
+    }
+
+    #rtTitle {
+      line-height: 40px;
+    }
+
+    .box {
+      width: 100%;
+      padding: 10px 0;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #rtSpan {
+      color: #ddd;
+    }
+
+    #rtInfo {
+      line-height: 30px;
+      margin-left: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="app">
+    <img src="" alt="op_xxx.png" id="rtImage">
+    <div id="rtTitle"></div>
+    <div class="box">
+      <span id="rtSpan"></span>
+      <span id="rtInfo"></span>
+    </div>
+  </div>
+</body>
+<!-- <script src="../../libs/jquery-1.11.2.min.js"></script> -->
+<script>
+
+var rtData = JSON.parse(localStorage.sgResult);
+var rtCode = JSON.parse(localStorage.sgCode);
+
+var elImage = document.getElementById("rtImage");
+var elTitle = document.getElementById("rtTitle");
+var elSpan = document.getElementById("rtSpan");
+var elInfo = document.getElementById("rtInfo");
+
+// 委托失败
+if(rtData.ErrorCode != 0) {
+  elImage.src = "res/op_failed.png";
+  elTitle.innerHTML = "委托提交失败！";
+  elSpan.innerHTML = "失败原因";
+  elInfo.innerHTML = rtData.ErrorInfo;
+}
+else {
+  elImage.src = "res/op_success.png";
+  elTitle.innerHTML = "委托提交成功！";
+  elSpan.innerHTML = "购买产品";
+  elInfo.innerHTML = rtCode["403"];
+}
+
+</script>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "tdx-template",
+  "version": "1.0.1",
+  "description": "模板工程，供脚手架使用",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.pro.js",
+    "eslint": "eslint --ext .jsx,.js,.vue src/"
+  },
+  "keywords": [
+    "gulp",
+    "webpack",
+    "demo"
+  ],
+  "author": "tdx",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.4",
+    "eslint": "^3.19.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^1.1.5",
+    "postcss-loader": "^2.0.6",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "vue-loader": "^13.0.4",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "vue": "^2.4.2"
+  }
+}

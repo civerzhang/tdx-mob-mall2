@@ -1,0 +1,126 @@
+html {
+  font-family: "微软雅黑", "Arial", "STXihei", "华文细黑", "Microsoft YaHei";
+  font-size: 14px;
+
+  /*去掉界面复制*/
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+  选中阴影
+*/
+:focus {
+  outline: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  /*汉字的 line-height 默认设置为1*/
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+table {
+  table-layout: fixed;
+}
+
+.tdx-loading {
+  background: url(../res/loading_white.gif) center center no-repeat;
+  height: 100px;
+}
+
+.tdx-nodata {
+  padding: 10px 0;
+  line-height: 22px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.flx {
+  flex: 1 1 auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fix {
+  flex-shrink: 0;
+}
+
+/* 小标签样式 */
+
+.card-blue,
+.card-gray,
+.card-orange,
+.card-blue2 {
+  display: inline-block;
+  width: 52px;
+  height: 19px;
+  border-radius: 4px;
+  font-size: 10px;
+  line-height: 19px;
+  text-align: center;
+  margin: 0 3px;
+}
+
+.card-blue {
+  border: 1px solid #4696F5;
+  background: #4696F5;
+  color: #fff;
+}
+
+.card-blue2 {
+  border: 1px solid #4696F5;
+  color: #4696F5;
+}
+
+.card-gray {
+  border: 1px solid #B4B4B4;
+  color: #B4B4B4;
+}
+
+.card-orange {
+  border: 1px solid #F9B349;
+  background: #F9B349;
+  color: #fff;
+}
+
+/* 小标签样式 - end */
+
+.sort-desc {
+  display: inline-block;
+  width: 5px;
+  height: 15px;
+  background: url(../res/sort-desc.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.sort-asc {
+  display: inline-block;
+  width: 5px;
+  height: 15px;
+  background: url(../res/sort-asc.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.tdx-btn {
+  border: 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  height: 26px;
+  line-height: 26px;
+  margin: 0 5px;
+  padding: 0 10px;
+  text-align: center;
+}
